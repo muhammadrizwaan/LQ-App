@@ -33,7 +33,7 @@ class NotStartedLeap extends React.Component {
             comments: '',
             showStartDatePicker: false,
             startDate: props.leapDetails.plan_start_date ? new Date(props.leapDetails.plan_start_date) : new Date(),
-            endDate:  props.leapDetails.plan_end_date ? new Date(props.leapDetails.plan_end_date) : new Date(),
+            endDate: props.leapDetails.plan_end_date ? new Date(props.leapDetails.plan_end_date) : new Date(),
             showEndDatePicker: false,
             isStartDateSelected: props.leapDetails.plan_start_date ? true : false,
             isEndDateSelected: props.leapDetails.plan_end_date ? true : false,
@@ -44,7 +44,7 @@ class NotStartedLeap extends React.Component {
 
     UNSAFE_componentWillReceiveProps(newProps) {
         if (newProps.activeTabId !== this.state.activeTabId) {
-           
+
             this.setState({
                 errors: {},
                 comments: '',
@@ -169,9 +169,9 @@ class NotStartedLeap extends React.Component {
         this.setState({ showEndDatePicker: true })
     }
     setStartDateonDB = (date) => {
-        this.setState({
-            loading: true
-        })
+        // this.setState({
+        //     loading: true
+        // })
         // Set Start Date on Database
         const { projectId, competencyId, myId, activeLevelNumber } = this.props
 
@@ -222,9 +222,9 @@ class NotStartedLeap extends React.Component {
             })
     }
     setEndDateonDB = (date) => {
-        this.setState({
-            loading: true
-        })
+        // this.setState({
+        //     loading: true
+        // })
         // Set Start Date on Database
         const { projectId, competencyId, myId, activeLevelNumber } = this.props
 
@@ -570,7 +570,7 @@ class NotStartedLeap extends React.Component {
                                         this.setState({ showStartDatePicker: false })
                                         this.setStartDate(event, date)
                                     }}
-                                // minimumDate={new Date()}
+                                    minimumDate={new Date(2020, 0, 1)}
                                 />
                             </View>}
 
@@ -595,7 +595,7 @@ class NotStartedLeap extends React.Component {
                                 onClose={() => this.setState({ showStartDatePicker: false })}
                                 setDate={this.setStartDate}
                                 onChange={this.onStartDateChange}
-                            // minimumDate={new Date()}
+                                minimumDate={new Date(2020, 0, 1)}
                             />
 
                             {/* Date Picker Modal for IOS (end date) */}

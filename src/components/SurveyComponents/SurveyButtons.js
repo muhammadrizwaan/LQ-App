@@ -32,7 +32,7 @@ export default class extends React.Component {
         const { styles, options, handleSelectAns, disable } = this.props
         const { activeButton } = this.props
         return (
-            <View style={{...styles.surveyBtnContainer, marginTop: -20}}>
+            <View style={{...styles.surveyBtnContainer, marginTop: 20}}>
                 {
                     options.map((option, index) => (
                         <Button 

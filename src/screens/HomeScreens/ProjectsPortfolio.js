@@ -24,6 +24,9 @@ class ProjectsPortfolio extends React.Component {
     }
     render() {
         const { user, isProjectLoading } = this.props
+        console.log('user', user)
+        console.log('projectloading', isProjectLoading)
+        console.log('lastproject', this.props.lastProject)
         return (
             <Container style={styles.containerPf}>
                 <ImageBackground source={require('../../images/background.png')} style={styles.rbackgroundImage}>
@@ -43,10 +46,10 @@ class ProjectsPortfolio extends React.Component {
                         <Image style={{alignSelf:"flex-end",marginRight:20,marginTop:-30}}source={require('../../images/notification_bell_icon.png')}/> */}
 
                     </SafeAreaView>
-                    {
+                    {/* {
                         this.props.profileLoading ?
                             <Spinner color="white" />
-                            :
+                            : */}
                             <Content>
                                 <Text style={styles.whiteColor}>{`Hello ${user.name},`}</Text>
                                 <Text style={styles.whiteColor1}>What do you want to do today?</Text>
@@ -120,7 +123,7 @@ class ProjectsPortfolio extends React.Component {
                                         </Button>
                                 }
                             </Content>
-                    }
+                    {/* } */}
                 </ImageBackground>
             </Container>
         )
